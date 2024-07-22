@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { Button } from "antd";
+import { twMerge } from "tailwind-merge";
 type MenuTabProps = Partial<HTMLAttributes<HTMLDivElement>> & {
   isActive: boolean;
   text: string;
@@ -7,17 +7,17 @@ type MenuTabProps = Partial<HTMLAttributes<HTMLDivElement>> & {
 };
 export default function MenuTab({ id, isActive, text, onClick }: MenuTabProps) {
   return (
-    <Button
-      id={id}
-      type="text"
-      className={`p-5 font-medium  ${
-        isActive
-          ? "text-[#ED165F] underline decoration-[#ED165F] underline-offset-8"
+    <li>
+      <button
+        id={id}
+        onClick={onClick}
+        className={twMerge(
+          `p-5 font-medium`,
+          isActive ? "text-[#ED165F] underline decoration-[#ED165F] underline-offset-8"
           : " text-black"
-      }`}
-      onClick={onClick}
-    >
-      {text}
-    </Button>
+        )}>
+        {text}
+      </button>
+    </li>
   );
 }

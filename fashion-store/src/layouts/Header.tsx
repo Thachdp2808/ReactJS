@@ -15,8 +15,8 @@ export default function Header() {
   };
   return (
     <>
-      <Flex align="center" justify="space-between" className="w-full h-20 px-36 py-7 ">
-        <Flex className="gap-5 text-sm font-medium">
+      <div className="flex justify-between items-center w-full h-20 px-36 py-7 ">
+        <ul className="flex gap-5 text-sm font-medium">
           <MenuTab
             id="Home"
             isActive={tabId == TabType.Home}
@@ -41,9 +41,9 @@ export default function Header() {
             text="Accessories"
             onClick={() => onHandleSetTab(TabType.Accessories)}
           />
-        </Flex>
+        </ul>
         <SafariIcon />
-        <Flex className="flex gap-8 text-sm font-medium items-center">
+        <div className="flex gap-8 text-sm font-medium items-center">
           <Search
             placeholder="input search text"
             onSearch={onSearch}
@@ -54,8 +54,8 @@ export default function Header() {
           <UserIcon />
           <CartIcon />
           <HeartIcon />
-        </Flex>
-      </Flex>
+        </div>
+      </div>
     </>
   );
 }
