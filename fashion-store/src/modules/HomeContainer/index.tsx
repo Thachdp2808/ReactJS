@@ -1,7 +1,8 @@
 import CardShop from "@src/layouts/CardShop";
-import { products } from "@src/constants/shop.constants";
+import { products, itemsPerPage } from "@src/constants/shop.constants";
 import ReactPaginate from "react-paginate";
-import { useState, useEffect } from "react";
+import {  useEffect } from "react";
+import { useNavigationStore } from "@src/stores/useNavigationStore";
 const chunkArray = (start: number, end: number, arr: any, size: number) => {
   const result = [];
   for (let i = start; i < end; i += size) {
@@ -10,9 +11,7 @@ const chunkArray = (start: number, end: number, arr: any, size: number) => {
   return result;
 };
 export default function HomeContainer() {
-  const [rows, setRows] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 4;
+  const { rows, setRows, currentPage, setCurrentPage } = useNavigationStore();
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
   useEffect(() => {
@@ -28,11 +27,11 @@ export default function HomeContainer() {
   };
   return (
     <>
-      <div className="flex justify-center items-center bg-[#ED165F] w-full h-screen relative">
+      <div className="flex justify-center items-center bg-primary-1 w-full h-screen relative">
         <img
           src="./public/BackgroundText.png"
           alt="BackgroundText"
-          className="absolute w-auto z-0"
+          className="absolute w-auto z-0 h-full"
         ></img>
         <img
           src="./public/MaskGroup.png"
@@ -48,7 +47,7 @@ export default function HomeContainer() {
           </p>
         </div>
       </div>
-      <div className=" flex justify-center items-center w-full h-[100px] px-[170px] flex-wrap">
+      <div className=" flex justify-center items-center w-full h-[100px] lg:px-[170px] flex-wrap py-10">
         <p className="text-center text-2xl">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vitae gravida
           cursus adipiscing viverra at tortor, egestas odio parturient. Morbi ut
@@ -57,37 +56,41 @@ export default function HomeContainer() {
           adipiscing id facilisis.
         </p>
       </div>
-      <div className="flex justify-evenly items-center w-full my-4 flex-wrap">
+      <div className="flex justify-evenly items-center w-full my-4 flex-wrap mt-40 md:mt-12">
         {rows.map((product) => (
-          <CardShop
-            key={product.id}
-            id={product.id}
-            title={product.title}
-            description={product.description}
-            img={product.img}
-          />
+          <div className="flex justify-evenly items-center sm:w-full md:w-1/4">
+            <CardShop
+              key={product.id}
+              id={product.id}
+              title={product.title}
+              description={product.description}
+              img={product.img}
+            />
+          </div>
         ))}
       </div>
-      
-      <div className="w-full border-b border-gray-200 font-mono mb-16">
-        <nav className="flex flex-wrap justify-center text-gray-700 -mb-px">
+
+      <div className="w-full border-b border-primary-2 font-mono mb-16">
+        <nav className="flex flex-wrap justify-center text-primary-3-mb-px">
           <ReactPaginate
             breakLabel="..."
-            nextLabel={currentPage === totalPages - 1 ? "" :  <span>&#8702;</span>}
+            nextLabel={
+              currentPage === totalPages - 1 ? "" : <span>&#8702;</span>
+            }
             onPageChange={handlePageClick}
             pageRangeDisplayed={4}
             pageCount={totalPages}
-            previousLabel={currentPage === 0 ? "" :  <span>&#8701;</span>}
-            pageClassName="page-item p-2 mx-1 border-b border-transparent hover:border-gray-700"
+            previousLabel={currentPage === 0 ? "" : <span>&#8701;</span>}
+            pageClassName="page-item p-2 mx-1 border-b border-transparent hover:border-primary-1"
             pageLinkClassName="page-link"
-            previousClassName="page-item p-2 mx-1 border-b border-transparent hover:border-gray-700"
+            previousClassName="page-item p-2 mx-1 border-b border-transparent hover:border-primary-1"
             previousLinkClassName="page-link"
-            nextClassName="page-item p-2 mx-1 border-b border-transparent hover:border-gray-700"
+            nextClassName="page-item p-2 mx-1 border-b border-transparent hover:border-primary-1"
             nextLinkClassName="page-link"
             breakClassName="page-item p-2 mx-1"
             breakLinkClassName="page-link"
             containerClassName="pagination flex flex-wrap justify-center text-gray-700 -mb-px"
-            activeClassName="current p-2 mx-1 text-gray-800 border-b-1 border-b-[#0ce93c]"
+            activeClassName="current p-2 mx-1 text-gray-800 border-b-1 border-b-primary-1"
           />
         </nav>
       </div>

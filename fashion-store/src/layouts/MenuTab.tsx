@@ -12,8 +12,8 @@ export default function MenuTab({ id, isActive, text, onClick }: MenuTabProps) {
         id={id}
         onClick={onClick}
         className={twMerge(
-          `p-5 font-medium`,
-          isActive ? "text-[#ED165F] underline decoration-[#ED165F] underline-offset-8"
+          `p-5 font-medium md:p-2`,
+          isActive ? "text-primary-1 underline decoration-primary-1 underline-offset-8"
           : " text-black"
         )}>
         {text}

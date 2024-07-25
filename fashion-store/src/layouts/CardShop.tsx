@@ -1,6 +1,4 @@
-import { Card } from "antd";
 import { HTMLAttributes } from "react";
-const { Meta } = Card;
 type CardShopProps = Partial<HTMLAttributes<HTMLDivElement>> & {
     title: string;
     description: string;

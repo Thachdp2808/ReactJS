@@ -3,7 +3,12 @@ export enum TabType {
     Clothes = 2,
     Shoes = 3,
     Accessories = 4,
+    Account = 5,
+    Cart = 6,
+    Favorite = 7,
   }
+
+export const itemsPerPage = 4;
 export const products = [
     {
       id: "1",
