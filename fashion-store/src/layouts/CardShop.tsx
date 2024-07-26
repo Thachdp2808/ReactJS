@@ -1,4 +1,5 @@
 import { HTMLAttributes } from "react";
+
 type CardShopProps = Partial<HTMLAttributes<HTMLDivElement>> & {
   title: string;
   description: string;

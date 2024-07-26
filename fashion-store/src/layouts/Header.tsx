@@ -1,6 +1,5 @@
 import { TabType } from "@src/constants/shop.constants";
 import { SafariIcon } from "@src/icons/SafariIcon";
-import { Input, Flex } from "antd";
 import { UserIcon } from "@src/icons/UserIcon";
 import { CartIcon } from "@src/icons/CartIcon";
 import { HeartIcon } from "@src/icons/HeartIcon";

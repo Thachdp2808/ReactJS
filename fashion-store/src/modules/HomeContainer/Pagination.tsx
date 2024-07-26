@@ -1,5 +1,4 @@
 import ReactPaginate from "react-paginate";
-import { useNavigationStore } from "@src/stores/useNavigationStore";
 import { HTMLAttributes } from "react";
 type PaginationProps = Partial<HTMLAttributes<HTMLDivElement>> & {
     currentPage: number;

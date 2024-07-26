@@ -1,9 +1,12 @@
 {
+  "homepage": "https://thachdp2808.github.io/ReactJS",
   "name": "vite-project",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
@@ -12,6 +15,7 @@
   "dependencies": {
     "@react-oauth/google": "^0.12.1",
     "antd": "^5.19.2",
+    "gh-pages": "^6.1.1",
     "jwt-decode": "^4.0.0",
     "prettier": "^3.3.3",
     "react": "^18.3.1",

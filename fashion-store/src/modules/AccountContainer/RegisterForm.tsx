@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+
 type Registers = {
   firstName: string;
   lastName: string;

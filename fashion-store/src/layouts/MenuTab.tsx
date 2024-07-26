@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
+
 type MenuTabProps = Partial<HTMLAttributes<HTMLDivElement>> & {
   isActive: boolean;
   text: string;

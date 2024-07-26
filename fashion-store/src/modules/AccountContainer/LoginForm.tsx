@@ -1,5 +1,4 @@
 import { useForm } from "react-hook-form";
-import { useNavigationStore } from "@src/stores/useNavigationStore";
 import LoginGoogle from "./LoginGoogle";
 type Logins = {
   email: string;

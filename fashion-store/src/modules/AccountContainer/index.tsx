@@ -4,7 +4,7 @@ export default function AccountContainer() {
   return (
     <>
       <div className="flex flex-col justify-between items-center px-10 xl:px-56">
-        <div className="flex flex-col items-start w-full mt-16">
+        <div className="flex flex-col items-start w-full xl:mt-16">
           <h1 className="text-3xl font-bold">Hello there!</h1>
           <p className="text-xl">
             Please sign in or create an account to continue

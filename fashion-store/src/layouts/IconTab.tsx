@@ -1,5 +1,6 @@
 import { HTMLAttributes } from "react";
 import { twMerge } from "tailwind-merge";
+
 type IcontabProps = Partial<HTMLAttributes<HTMLDivElement>> & {
   isActive: boolean;
   icon: React.ReactNode;
