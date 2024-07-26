@@ -32,7 +32,7 @@ export default function Header() {
   const renderMenuTabs = () =>
     menuItems.map((item) => (
       <MenuTab
-        id={item.text}
+        key={item.text}
         isActive={tabId === item.id}
         text={item.text}
         onClick={() => onHandleSetTab(item.id)}
@@ -40,7 +40,7 @@ export default function Header() {
     ));
   return (
     <>
-      <div className="flex justify-between items-center h-20 px-10 lg:px-36 py-7 md:flex-row md:w-full">
+      <div className="flex bg-primary-4 justify-between items-center h-20 px-10 lg:px-36 py-7 md:flex-row md:w-full">
         <MultiIcon
           width={24}
           height={24}
@@ -62,7 +62,7 @@ export default function Header() {
         <div className="flex md:gap-8 text-sm font-medium items-center gap-4">
           <div className="hidden lg:flex lg:items-center lg:gap-2">
             <input
-              className=" border-b-[1px] border-b-primary-5"
+              className=" border-b-[1px] border-b-primary-5 bg-inherit"
               placeholder="Search..."
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -72,19 +72,19 @@ export default function Header() {
             />
           </div>
           <IconTab
-            id="Account"
+            key="Account"
             isActive={tabId == TabType.Account}
             icon={<UserIcon />}
             onClick={() => onHandleSetTab(TabType.Account)}
           />
           <IconTab
-            id="Cart"
+            key="Cart"
             isActive={tabId == TabType.Cart}
             icon={<CartIcon />}
             onClick={() => onHandleSetTab(TabType.Cart)}
           />
           <IconTab
-            id="Favorite"
+            key="Favorite"
             isActive={tabId == TabType.Favorite}
             icon={<HeartIcon />}
             onClick={() => onHandleSetTab(TabType.Favorite)}

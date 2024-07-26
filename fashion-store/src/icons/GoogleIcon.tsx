@@ -10,7 +10,7 @@ export const GoogleIcon = (props: SVGProps<SVGSVGElement>) => {
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
-      <g clip-path="url(#clip0_7001_7203)">
+      <g clipPath="url(#clip0_7001_7203)">
         <path
           d="M20.305 10.7304C20.305 10.0506 20.2499 9.36714 20.1323 8.69839H10.7V12.5492H16.1015C15.8773 13.7912 15.1571 14.8898 14.1026 15.588V18.0866H17.325C19.2174 16.3449 20.305 13.7728 20.305 10.7304Z"
           fill="#4285F4"

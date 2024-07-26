@@ -7,6 +7,12 @@ export enum TabType {
     Cart = 6,
     Favorite = 7,
   }
+export enum SubTab{
+  Information = 1,
+  AddressBook = 2,
+  Orders = 3,
+  Favorite = 4,
+}
 
 export const itemsPerPage = 4;
 export const products = [
