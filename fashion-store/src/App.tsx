@@ -12,7 +12,8 @@ import UserContainer from "./modules/UserContainer";
 function App() {
   const { tabId } = useNavigationStore();
   const accessToken = localStorage.getItem("accessToken");
-  const clientId =import.meta.env.VITE_GOOGLE_CLIENT_ID;
+  const clientId = "894787355762-f4mavam9if2i84ipggjoqtecbn77le33.apps.googleusercontent.com";
+  console.log(clientId);
   return (
     <>
       <Header />
