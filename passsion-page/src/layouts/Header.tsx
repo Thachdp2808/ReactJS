@@ -41,7 +41,7 @@ export default function Header() {
     <div className='bg-white flex w-full items-center justify-between'>
       <img src='./public/Rauliqbal.svg' />
       <div>
-        <ul className='flex gap-11 text-2xl justify-center items-center tracking-wider'>
+        <ul className='md:flex gap-11 text-2xl justify-center items-center tracking-wider hidden'>
           <a href='/google.com'>About</a>
           <a href=''>Passions</a>
           <a href=''>Portfolio</a>
@@ -49,6 +49,7 @@ export default function Header() {
             Contact Me
           </a>
         </ul>
+        <img src='/menu-icon.svg' className='md:hidden' />
       </div>
     </div>
   );

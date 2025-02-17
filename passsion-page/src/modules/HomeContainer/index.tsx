@@ -10,7 +10,7 @@ export default function HomeContainer() {
         alt='Background'
       />
 
-      <div className='container mx-auto flex justify-between items-center gap-10 px-6'>
+      <div className='container mx-auto md:flex justify-between items-center gap-10 hidden'>
         <div className='max-w-lg'>
           <h1 className='text-5xl font-bold tracking-wide text-primary-2 leading-tight'>
             Hi!&nbsp;I’m Muhamad Raul, <br /> a Front-End Developer.
@@ -27,11 +27,28 @@ export default function HomeContainer() {
         />
       </div>
 
+      <div className='container mx-auto flex flex-col md:flex-row justify-between items-center gap-10 md:hidden'>
+        <img
+          src='/heroImg.png'
+          alt='Hero Image'
+          className='w-3/4 object-contain drop-shadow-lg'
+        />
+        <div className='max-w-lg'>
+          <h1 className='md:text-5xl text-2xl font-bold tracking-wide text-primary-2 leading-tight'>
+            Hi!&nbsp;I’m Muhamad Raul, <br /> a Front-End Developer.
+          </h1>
+          <p className='mt-4 md:text-lg text-sm tracking-wide text-gray-700'>
+            Front-End developer based in Bekasi, Indonesia.&nbsp;I’m coding with
+            a clean and beautiful problem-solving mindset.
+          </p>
+        </div>
+      </div>
+
       <div className='flex flex-col justify-center items-center gap-16 py-16'>
-        <h2 className='text-4xl font-bold tracking-wide text-primary-3'>
+        <h2 className='md:text-4xl text-2xl font-bold tracking-wide text-primary-3'>
           Additional <span className='text-primary-2'>Passions</span>
         </h2>
-        <div className='flex justify-center items-center gap-12'>
+        <div className='flex flex-col md:flex-row justify-center items-center gap-12'>
           {passions.map((passion, index) => (
             <div
               key={index}
@@ -51,10 +68,10 @@ export default function HomeContainer() {
       </div>
 
       <div className='flex flex-col justify-center items-center gap-6 py-16'>
-        <h2 className='text-4xl font-bold tracking-wide text-primary-3'>
+        <h2 className='tmd:text-4xl text-2xl font-bold tracking-wide text-primary-3'>
           My <span className='text-primary-2'>Portfolio</span>
         </h2>
-        <div className='flex justify-center items-center'>
+        <div className='flex flex-col md:flex-row  justify-center items-center'>
           {portfolio.map((item, index) => (
             <img
               src={item.img}
@@ -66,10 +83,10 @@ export default function HomeContainer() {
       </div>
 
       <div className='flex flex-col justify-center items-center gap-16 py-16'>
-        <h2 className='text-4xl font-bold tracking-wide text-primary-3'>
+        <h2 className='md:text-4xl text-2xl font-bold tracking-wide text-primary-3'>
           Contact <span className='text-primary-2'>Me</span>
         </h2>
-        <div className='flex justify-center items-center gap-12'>
+        <div className='flex flex-col md:flex-row justify-center items-center gap-12'>
           {contactMe.map((passion, index) => (
             <div
               key={index}

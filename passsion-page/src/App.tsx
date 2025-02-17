@@ -8,11 +8,13 @@ import Footer from './layouts/Footer';
 function App() {
   const { tabId } = useNavigationStore();
   return (
-    <div className='py-10 px-20'>
-      <Header />
-      {tabId === TabType.Home && <HomeContainer />}
+    <>
+      <div className='md:py-10 md:px-20 p-5'>
+        <Header />
+        {tabId === TabType.Home && <HomeContainer />}
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }
 
