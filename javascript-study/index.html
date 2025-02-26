@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello world</h1>
+    <script>
+    // Task 1
+      const objects = [
+        {
+          number: 45,
+        },
+        {
+          number: 4,
+        },
+        {
+          number: 9,
+        },
+        {
+          number: 16,
+        },
+        {
+          number: 25,
+        },
+        {
+          number: 16,
+        },
+        {
+          number: 24,
+        },
+      ];
+      const formatArray = objects
+      .filter((item) => item.number > 20)
+      .map(item => Math.floor(Math.sqrt(item.number)));
+      console.log(formatArray);
+
+      const totalFilter = objects.reduce((total, item) => {
+        return item.number > 20 ? total + item.number : total
+      },0)
+      console.log(totalFilter);
+
+      // Task 2
+      function formatNumber(number) {
+        return number < 0 ? '0' : new Intl.NumberFormat('en-US').format(number)
+      }
+      console.log(formatNumber(10));
+
+      //Task 3
+      const numbers = [1, 3, 5, 18, 9];
+      function boomNumber(array = []) {
+        const hasSeven = numbers.some(num => num.toString().includes('7'));
+        return hasSeven ? 'BOOM!' : 'there is no 7 in the array';
+      }
+      console.log(boomNumber(numbers));
+
+      //Task 4
+      function reverseString(str) {
+        return str.trim().split(/\s+/).reverse().join(' ');
+      }
+      console.log(reverseString("hello   world!  "));
+      
+      //Task 6
+
+      
+      //Task 8
+      function isPandigital(num) {
+        const str = num.toString();
+        return [...'1234567890'].every(digit => str.includes(digit));
+        //return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].every(digit => str.includes(digit));
+      }
+      console.log(isPandigital(90864523148909));
+    </script>
+  </body>
+</html>
