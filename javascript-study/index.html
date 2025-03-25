@@ -9,70 +9,120 @@
   <body>
     <h1>hello world</h1>
     <script>
-    // Task 1
-      const objects = [
-        {
-          number: 45,
-        },
-        {
-          number: 4,
-        },
-        {
-          number: 9,
-        },
-        {
-          number: 16,
-        },
-        {
-          number: 25,
-        },
-        {
-          number: 16,
-        },
-        {
-          number: 24,
-        },
-      ];
-      const formatArray = objects
-      .filter((item) => item.number > 20)
-      .map(item => Math.floor(Math.sqrt(item.number)));
-      console.log(formatArray);
+      // Task 1
+      {
+        const objects = [
+          {
+            number: 45,
+          },
+          {
+            number: 4,
+          },
+          {
+            number: 9,
+          },
+          {
+            number: 16,
+          },
+          {
+            number: 25,
+          },
+          {
+            number: 16,
+          },
+          {
+            number: 24,
+          },
+        ];
+        const formatArray = objects
+          .filter((item) => item.number > 20)
+          .map((item) => Math.floor(Math.sqrt(item.number)));
 
-      const totalFilter = objects.reduce((total, item) => {
-        return item.number > 20 ? total + item.number : total
-      },0)
-      console.log(totalFilter);
+        const totalFilter = objects.reduce((total, item) => {
+          return item.number > 20 ? total + item.number : total;
+        }, 0);
+        function task1() {
+          return totalFilter;
+        }
+      }
 
       // Task 2
-      function formatNumber(number) {
-        return number < 0 ? '0' : new Intl.NumberFormat('en-US').format(number)
+      {
+        function formatNumber(number) {
+          return number < 0
+            ? '0'
+            : new Intl.NumberFormat('en-US').format(number);
+        }
+        function task2() {
+          return formatNumber(10);
+        }
       }
-      console.log(formatNumber(10));
 
       //Task 3
-      const numbers = [1, 3, 5, 18, 9];
-      function boomNumber(array = []) {
-        const hasSeven = numbers.some(num => num.toString().includes('7'));
-        return hasSeven ? 'BOOM!' : 'there is no 7 in the array';
+      {
+        const numbers = [1, 3, 5, 18, 9];
+        function boomNumber(array = []) {
+          const hasSeven = numbers.some((num) => num.toString().includes('7'));
+          return hasSeven ? 'BOOM!' : 'there is no 7 in the array';
+        }
+        function task3() {
+          return boomNumber(numbers);
+        }
       }
-      console.log(boomNumber(numbers));
 
       //Task 4
-      function reverseString(str) {
-        return str.trim().split(/\s+/).reverse().join(' ');
+      {
+        function reverseString(str) {
+          return str.trim().split(/\s+/).reverse().join(' ');
+        }
+        function task4() {
+          return reverseString('hello   world!  ');
+        }
       }
-      console.log(reverseString("hello   world!  "));
-      
+
       //Task 6
 
-      
       //Task 8
-      function isPandigital(num) {
-        const str = num.toString();
-        return [...'1234567890'].every(digit => str.includes(digit));
-        //return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].every(digit => str.includes(digit));
+      {
+        function isPandigital(num) {
+          const str = num.toString();
+          return [...'1234567890'].every((digit) => str.includes(digit));
+          //return ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].every(digit => str.includes(digit));
+        }
+        function task8() {
+          return isPandigital(90864523148909);
+        }
       }
-      console.log(isPandigital(90864523148909));
+      
+      //Task 9
+      {
+        const person = {
+          name: 'Thach',
+          age: 20,
+          address: 'Hanoi',
+          greet: function() {
+            return `Hello, my name is ${this.name}`;
+          }
+        }
+        function task9() {
+          person.email = 'zTl0v@example.com';
+          return person.greet() + ' ' + person.email;
+        }
+      }
+
+      //Task 10
+      {
+        const numbers = [1,2,3,4,5,6,7,8,9,10];
+
+        const oddNumbers = numbers.filter(num => num % 2 !== 0);
+
+        const sumEvenNumbers = numbers.reduce((total, num) => num % 2 === 0 ? total + num : total, 0);
+
+        function task10() {
+          return oddNumbers + ' ' + sumEvenNumbers;
+        }
+      }
+      console.log(task10());
     </script>
   </body>
 </html>
