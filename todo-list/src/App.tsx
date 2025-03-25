@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react';
 import './App.css';
+import { Pencil, Trash } from 'lucide-react';
 
 const list = [
   {
@@ -25,8 +25,6 @@ const list = [
 ];
 
 function App() {
-  const [listTodo, setListTodo] = useState([]);
-
   return (
     <div className='app'>
       <div className='header'>
@@ -49,13 +47,15 @@ function App() {
             <>
               <div key={item.id} className='todo-item'>
                 <span>{item.title}</span>
-
-                {/* <button>DELETE</button> */}
-              </div>
-              <div className='todo-item-action'>
-                <input type='checkbox' checked={item.done} />
-                <input type='checkbox' checked={item.done} />
-                <input type='checkbox' checked={item.done} />
+                <div className='todo-item-action'>
+                  <input
+                    type='checkbox'
+                    checked={item.done}
+                    style={{ cursor: 'pointer' }}
+                  />
+                  <Pencil size={16} style={{ cursor: 'pointer' }} />
+                  <Trash size={16} style={{ cursor: 'pointer' }} />
+                </div>
               </div>
             </>
           ))}
