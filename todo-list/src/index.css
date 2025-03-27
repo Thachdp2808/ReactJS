@@ -73,7 +73,7 @@
   align-items: center;
   margin-top: 2rem;
   gap: 1rem;
-  width: 100%;
+  width: 97%;
   
 }
 .todo-list-item .todo-item{
@@ -105,4 +105,17 @@
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media screen and (max-width: 600px) {
+  .header{
+    width: 70%;
+  }
+  .todo-list{
+    width: 84%;
+  }
+  .todo-list-item{
+    width: 94%;
+  }
+  
 }
